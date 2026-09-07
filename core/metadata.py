@@ -134,7 +134,7 @@ def extrair_metadados_pillow(conteudo: bytes) -> Dict[str, Any]:
                             continue
                     dados[tag_name] = str(val) if not isinstance(val, (int, float, str)) else val
 
-                for ifd_id in (ExifTags.IFD.Exif, ExifTags.IFD.GPSInfo, ExifTags.IFD.Makernote):
+                for ifd_id in (ExifTags.IFD.Exif, ExifTags.IFD.GPSInfo, ExifTags.IFD.MakerNote):
                     try:
                         ifd = exif.get_ifd(ifd_id)
                         for tag_id, val in ifd.items():
